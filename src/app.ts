@@ -4,7 +4,7 @@ const app =express()
 
 
 
-
+app.use(express.json())
 
 app.get("/api/v1/query",async (req,res) =>{
 
