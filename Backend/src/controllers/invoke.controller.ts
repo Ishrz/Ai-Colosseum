@@ -1,5 +1,5 @@
 import GraphCall from "../service/graph.service.js"
-import { Request,Response } from "express";
+import type { Request,Response } from "express";
 
 export const invoke = async (req:Request, res:Response) => {
   const { message } = req.body;
