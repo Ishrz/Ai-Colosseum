@@ -1,25 +1,29 @@
 import express from "express";
 import GraphCall from "./service/graph.service.js"
+import { success } from "zod";
 const app =express()
 
 
 
 app.use(express.json())
 
-app.get("/api/v1/query",async (req,res) =>{
+app.get("/api/v1/invoke",async (req,res) =>{
     try {
 
-        const { message } = req.query as { message?: string }
+        const { message } = req.body
+        console.log(message)
         if (!message) {
             return res.status(400).json({
-                message: "Missing message query parameter"
+                message: "Missing message parameter"
             })
         }
 
         const result = await GraphCall(message)
 
         res.status(201).json({
-            message: result
+            message: "graph executed successfully",
+            success:true,
+            result
         })
         
     } catch (error) {
