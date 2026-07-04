@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: #09090b;
+  --color-bg-surface: #18181b;
+  --color-bg-surface-elevated: #27272a;
+  --color-border-subtle: #27272a;
+  --color-border-muted: #3f3f46;
+  
+  --color-text-main: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-text-dim: #71717a;
+
+  --color-accent: #6366f1;
+  --color-accent-dim: rgba(99, 102, 241, 0.15);
+  --color-accent-border: #4f46e5;
+
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", SFMono-Regular, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar matching dark theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Layout utilities */
+.breathing-space {
+  padding: clamp(1rem, 5vw, 2.5rem);
+}
