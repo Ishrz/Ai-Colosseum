@@ -61,7 +61,7 @@ export const State = Annotation.Root({
 
 
 const solution_node: GraphNode<typeof State> = async (state) => {
-  console.log(state.problem);
+  // console.log(state.problem);
 
   const [mistralResponse, cohereResponse] = await Promise.all([
         mistralModel.invoke(state.problem),
@@ -119,7 +119,7 @@ export default async (problem: string) => {
   })
 
   // console.log("fetching result....");
-  console.log(result);
+  // console.log(result);
 
   return result
 };

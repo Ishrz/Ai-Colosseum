@@ -1,43 +1,16 @@
 import express from "express";
-import GraphCall from "./service/graph.service.js"
-import { success } from "zod";
+import cors from "cors"
+import morgan from "morgan"
+import invokeRouter from "./routes/invoke.route.js"
+
 const app =express()
 
-
-
+app.use(morgan("dev"))
+app.use(cors())
 app.use(express.json())
 
-app.get("/api/v1/invoke",async (req,res) =>{
-    try {
 
-        const { message } = req.body
-        console.log(message)
-        if (!message) {
-            return res.status(400).json({
-                message: "Missing message parameter"
-            })
-        }
-
-        const result = await GraphCall(message)
-
-        res.status(201).json({
-            message: "graph executed successfully",
-            success:true,
-            result
-        })
-        
-    } catch (error) {
-        res.json({
-            message:"something went wrong",
-            error:error
-        })
-    }
-
-})
-
-
-
-
+app.use("/api/v1" , invokeRouter)
 
 app.get("/api/v1/health" , (req,res) =>{
     res.status(200).json({
