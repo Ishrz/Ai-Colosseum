@@ -21,7 +21,7 @@ app.use(express.json())
 // console.log(":::dirname::::")
 // console.log(__dirname)
 
-app.use(express.static(path.join(__dirname, ".." ,  'public')));
+app.use(express.static(path.join(process.cwd() ,  'public')));
 
 
 app.use("/api/v1" , invokeRouter)
@@ -34,7 +34,7 @@ app.get("/api/v1/health" , (req,res) =>{
 })
 
 app.get('*any', (req, res) => {
-  res.sendFile(path.join(__dirname, ".." , 'public', 'index.html'));
+  res.sendFile(path.join(process.cwd() , 'public', 'index.html'));
 });
 
 
