@@ -119,7 +119,7 @@ export default function App() {
 
       // await new Promise((resolve) => setTimeout(resolve, 2200));
       console.log(queryText)
-      const response = await axios.post("http://localhost:3000/api/v1/invoke", { message: queryText });
+      const response = await axios.post("/api/v1/invoke", { message: queryText });
       console.log(response)
       aiResponseData = response.data.result;
 

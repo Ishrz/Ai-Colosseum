@@ -19,13 +19,13 @@ export default function ChatSidebar({
       {/* Mobile Backdrop overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 md:hidden backdrop-blur-xs transition-opacity"
+          className="fixed  inset-0 z-40 bg-black/60 md:hidden backdrop-blur-xs transition-opacity"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border-subtle bg-bg-surface py-6 px-4 transition-transform duration-300 md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-72  flex-col border-r border-border-subtle bg-bg-surface py-6 px-4 transition-transform duration-300 md:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
