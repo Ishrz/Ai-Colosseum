@@ -1,0 +1,37 @@
+.env
+
+node_modules
+
+*.md
+!README.md
+
+
+
+# === Backend ===
+Backend/node_modules
+Backend/dist
+
+Backend/*.log
+
+# Local Vercel CLI state
+.vercel
+
+# === Frontend ===
+Frontend/node_modules
+Frontend/dist
+
+Frontend/*.log
+
+# === Root-level ===
+.env
+
+*.log
+
+.DS_Store
+
+# Optional but recommended
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
