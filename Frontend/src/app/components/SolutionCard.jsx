@@ -36,8 +36,8 @@ export default function SolutionCard({
 
       const codeText = match[1];
       parts.push(
-        <div key={`code-${match.index}`} className="relative group my-4 rounded-lg overflow-hidden border border-border-subtle bg-bg-base">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-border-subtle bg-bg-surface">
+        <div key={`code-${match.index}`} className="relative group my-4 rounded-lg overflow-hidden border border-border-subtle bg-code-bg">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-border-subtle bg-code-header">
             <span className="text-[10px] font-bold uppercase tracking-wider text-text-dim">Source Snippet</span>
             <button
               onClick={() => handleCopy(codeText)}
