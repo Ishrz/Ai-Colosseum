@@ -20,10 +20,10 @@ export const invoke = async (req:Request, res:Response) => {
       success: true,
       result,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.json({
       message: "something went wrong",
-      error: error,
+      error: error
     });
   }
 };

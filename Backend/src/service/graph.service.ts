@@ -10,7 +10,7 @@ import {
 } from "@langchain/langgraph";
 import { z } from "zod";
 import type { GraphNode } from "@langchain/langgraph";
-import { mistralModel, cohereModel, giminiModel } from "./model.service.js";
+import { groqModel, cohereModel, giminiModel } from "./model.service.js";
 import { createAgent, providerStrategy,HumanMessage } from "langchain";
 
 // const State = new StateSchema({
@@ -63,15 +63,20 @@ export const State = Annotation.Root({
 const solution_node: GraphNode<typeof State> = async (state) => {
   // console.log(state.problem);
 
-  const [mistralResponse, cohereResponse] = await Promise.all([
-        mistralModel.invoke(state.problem),
+  try{
+    const [GroqResponse, cohereResponse] = await Promise.all([
+        groqModel.invoke(state.problem),
         cohereModel.invoke(state.problem)
     ])
 
     return {
-        solution_1: mistralResponse.text,
+        solution_1: GroqResponse.text,
         solution_2: cohereResponse.text,
     }
+  }catch(err){
+    console.log(err)
+   throw new Error(`failed to call a llm model: ${err instanceof Error ? err.message : String(err)}`)
+  }
 };
 
 const judge_node: GraphNode<typeof State> = async (state) => {
