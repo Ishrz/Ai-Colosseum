@@ -1,22 +1,66 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-base: #09090b;
-  --color-bg-surface: #18181b;
-  --color-bg-surface-elevated: #27272a;
-  --color-border-subtle: #27272a;
-  --color-border-muted: #3f3f46;
-  
-  --color-text-main: #f4f4f5;
-  --color-text-muted: #a1a1aa;
-  --color-text-dim: #71717a;
+  /* Chamber dark (default) */
+  --color-bg-base: #0A0D18;
+  --color-bg-surface: #121726;
+  --color-bg-surface-elevated: #1B2233;
+  --color-border-subtle: #2D3A53;
+  --color-border-muted: #3A4A69;
 
-  --color-accent: #6366f1;
-  --color-accent-dim: rgba(99, 102, 241, 0.15);
-  --color-accent-border: #4f46e5;
+  --color-text-main: #F4F6F9;
+  --color-text-muted: #9FA8B8;
+  --color-text-dim: #64748B;
+
+  --color-accent: #F87171;              /* Rose — Solution 1 */
+  --color-accent-hover: #FA8C8C;
+  --color-accent-active: #EF4444;
+  --color-accent-dim: #121726;
+  --color-accent-border: #3A4A69;
+
+  --color-accent-b: #38BDF8;            /* Sky — Solution 2 */
+  --color-accent-b-hover: #56C8F9;
+  --color-accent-b-active: #0284C7;
+
+  --color-verdict-success: #10B981;
+  --color-warning-accent: #F59E0B;
+  --color-danger: #EF4444;
+
+  --color-code-bg: #0A0D18;
+  --color-code-header: #121726;
 
   --font-sans: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", SFMono-Regular, Consolas, monospace;
+}
+
+/* Soft light (Paper Chamber) — warm greige, low glare */
+[data-theme="light"] {
+  --color-bg-base: #E6E2DA;
+  --color-bg-surface: #EFEBE4;
+  --color-bg-surface-elevated: #DCD8CE;
+  --color-border-subtle: #D2CDC1;
+  --color-border-muted: #B4AEA0;
+
+  --color-text-main: #2C313B;
+  --color-text-muted: #5B6270;
+  --color-text-dim: #8A929E;
+
+  --color-accent: #B63B45;
+  --color-accent-hover: #A3323C;
+  --color-accent-active: #8C2833;
+  --color-accent-dim: #F3E4E4;
+  --color-accent-border: #B4AEA0;
+
+  --color-accent-b: #0E6BA3;
+  --color-accent-b-hover: #0B5A89;
+  --color-accent-b-active: #08486E;
+
+  --color-verdict-success: #176B47;
+  --color-warning-accent: #7D560C;
+  --color-danger: #B2342B;
+
+  --color-code-bg: #E0DBD0;
+  --color-code-header: #D6D0C3;
 }
 
 @layer base {
@@ -29,7 +73,7 @@
   }
 }
 
-/* Custom scrollbar matching dark theme */
+/* Custom scrollbar — theme aware */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -40,12 +84,20 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #24384A;
   border-radius: 9999px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #2E4A66;
+}
+
+[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #C9C3B6;
+}
+
+[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #B4AEA0;
 }
 
 /* Layout utilities */
