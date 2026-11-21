@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-base: #09090b;
-  --color-bg-surface: #18181b;
-  --color-bg-surface-elevated: #27272a;
-  --color-border-subtle: #27272a;
-  --color-border-muted: #3f3f46;
-  
-  --color-text-main: #f4f4f5;
-  --color-text-muted: #a1a1aa;
-  --color-text-dim: #71717a;
+  /* Chamber palette (Obsidian Chamber design system) */
+  --color-bg-base: #0A0D18;             /* Chamber Base */
+  --color-bg-surface: #121726;          /* Surface */
+  --color-bg-surface-elevated: #1B2233; /* Elevated */
+  --color-border-subtle: #2D3A53;       /* Border */
+  --color-border-muted: #3A4A69;        /* BorderMuted */
 
-  --color-accent: #6366f1;
-  --color-accent-dim: rgba(99, 102, 241, 0.15);
-  --color-accent-border: #4f46e5;
+  --color-text-main: #F4F6F9;           /* TextMain */
+  --color-text-muted: #9FA8B8;          /* TextMuted */
+  --color-text-dim: #64748B;            /* TextDim */
+
+  --color-accent: #F87171;              /* Rose — Solution 1 (Chamber Accent A) */
+  --color-accent-hover: #FA8C8C;        /* Primary Challenger hover */
+  --color-accent-active: #EF4444;       /* Primary Challenger active */
+  --color-accent-dim: #121726;          /* Chamber action surfaces (tint = Surface) */
+  --color-accent-border: #3A4A69;       /* Chamber focus state → BorderMuted */
+
+  --color-accent-b: #38BDF8;            /* Sky — Solution 2 (Chamber Accent B) */
+  --color-accent-b-hover: #56C8F9;
+  --color-accent-b-active: #0284C7;
+
+  --color-verdict-success: #10B981;     /* VerdictSuccess */
+  --color-warning-accent: #F59E0B;      /* WarningAccent */
+  --color-danger: #EF4444;              /* StatusDanger */
 
   --font-sans: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", SFMono-Regular, Consolas, monospace;
@@ -29,7 +40,7 @@
   }
 }
 
-/* Custom scrollbar matching dark theme */
+/* Custom scrollbar — Chamber: flat, no glow */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -40,12 +51,12 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1B2233;
   border-radius: 9999px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #24384A;
 }
 
 /* Layout utilities */
